@@ -1,6 +1,10 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import router from "./router";
+import { setupRouter } from "./router";
 import store from "./store";
 
-createApp(App).use(store).use(router).mount("#app");
+import "element-plus/dist/index.css";
+
+const app = createApp(App);
+setupRouter(app);
+app.use(store).mount("#app");

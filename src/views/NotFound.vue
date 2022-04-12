@@ -1,13 +1,11 @@
 <template>
-  <router-view></router-view>
+  <div>404......</div>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      msg: "vueroot",
-    };
+    return {};
   },
 };
 </script>
