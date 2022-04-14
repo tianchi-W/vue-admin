@@ -28,49 +28,30 @@ h5 {
     :mode="mode"
     @click="Open"
     style="border-right: none"
+    :router="true"
   >
-    <el-page-header
-      @click.stop="Close"
-      :title="showJ"
-      :content="showH"
-      :icon="false"
-    >
+    <el-page-header @click.stop="Close" :title="showJ" :content="showH">
       <template #title style="margin-left: 60px">
         <el-icon v-show="!isCollapse"><CloseBold /></el-icon>
       </template>
     </el-page-header>
-    <el-sub-menu index="1">
-      <template #title>
-        <el-icon><location /></el-icon>
-        <span>Navigator One</span>
-      </template>
-      <el-menu-item-group>
-        <template #title><span>Group One</span></template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
-    <el-menu-item index="2">
-      <el-icon><icon-menu /></el-icon>
-      <template #title>Navigator Two</template>
+
+    <el-menu-item index="/about">
+      <el-icon><Location /></el-icon>
+      <template #title>关于</template>
     </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <el-icon><document /></el-icon>
-      <template #title>Navigator Three</template>
+    <el-menu-item index="/home">
+      <el-icon><IconMenu /></el-icon>
+      <template #title>主要</template>
     </el-menu-item>
-    <router-link to="/lianxi">
-      <el-menu-item index="4">
-        <el-icon><setting /></el-icon>
-        <template #title>练习</template>
-      </el-menu-item></router-link
-    >
+    <el-menu-item index="/users">
+      <el-icon><Document /></el-icon>
+      <template #title>用户管理</template>
+    </el-menu-item>
+    <el-menu-item index="/lianxi">
+      <el-icon><setting /></el-icon>
+      <template #title>练习</template>
+    </el-menu-item>
   </el-menu>
 </template>
 
@@ -80,8 +61,8 @@ import {
   ElMenu,
   ElMenuItem,
   ElIcon,
-  ElSubMenu,
-  ElMenuItemGroup,
+  // ElSubMenu,
+  // ElMenuItemGroup,
   ElPageHeader,
   // ElRadioGroup,
   // ElRadioButton,
@@ -160,8 +141,8 @@ export default {
     ElPageHeader,
     ElMenuItem,
     ElIcon,
-    ElSubMenu,
-    ElMenuItemGroup,
+    // ElSubMenu,
+    // ElMenuItemGroup,
     CloseBold,
     // ElRadioGroup,
     // ElRadioButton,CloseBold

@@ -17,7 +17,7 @@
       <el-divider direction="vertical"> </el-divider>
       <el-container>
         <el-header>
-          <router-view name="myheader"></router-view>
+          <my-header></my-header>
         </el-header>
 
         <el-main>
@@ -39,6 +39,7 @@ import {
   ElDivider,
 } from "element-plus";
 import MyMenu from "../components/MyMenu.vue";
+import MyHeader from "@/components/MyHeader.vue";
 // import MyHeader from "../components/MyHeader.vue";
 export default {
   data() {
@@ -53,6 +54,7 @@ export default {
     ElAside,
     MyMenu,
     ElDivider,
+    MyHeader,
     // MyHeader,
   },
 };

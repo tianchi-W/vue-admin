@@ -1,5 +1,5 @@
 <template>
-  <el-page-header @back="goBack" />
+  <el-page-header> header </el-page-header>
 </template>
 
 <script>

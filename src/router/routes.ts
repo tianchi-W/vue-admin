@@ -11,6 +11,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "/home",
+        alias: "/abc",
         components: {
           default: () => import("views/Home.vue"),
           myheader: () => import("@/components/MyHeader.vue"),
@@ -27,11 +28,33 @@ const routes: Array<RouteRecordRaw> = [
         path: "/lianxi",
         components: {
           default: () => import("views/lianxi.vue"),
-          myheader: () => import("@/components/MyHeader.vue"),
         },
       },
     ],
   },
+  {
+    path: "/vuex",
+    name: "vuex",
+    component: () => import("../views/Vuex.vue"),
+  },
+  {
+    path: "/users",
+    name: "users",
+    component: () => import("../layout/left.vue"),
+    children: [
+      {
+        path: "/users",
+        components: {
+          default: () => import("views/Users.vue"),
+        },
+      },
+      {
+        path: "/users/:id",
+        component: () => import("@/components/Users.vue"),
+      },
+    ],
+  },
+
   {
     path: "/about",
     name: "About",
@@ -43,6 +66,14 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       { path: "/about", component: () => import("../views/About.vue") },
     ],
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("@/views/Login.vue"),
+    meta: {
+      title: "登录",
+    },
   },
   {
     path: "/:pathMatch(.*)*",

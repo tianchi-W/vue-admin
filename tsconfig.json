@@ -24,7 +24,10 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",
-    "src/components/Lchild.js"
+    "src/components/Lchild.js",
+    "src/main.js",
+    "src/store/index.js",
+    "src/store/vuex.js"
   ],
   "exclude": ["node_modules"]
 }
